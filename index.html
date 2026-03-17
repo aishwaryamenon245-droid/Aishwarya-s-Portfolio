@@ -18,28 +18,22 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
 .container{max-width:900px;width:100%}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* Hero */
 #hero{background:linear-gradient(135deg,#FDFAF6 55%,#EEF3F0);position:relative;overflow:hidden}
+.hero-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:0.08;pointer-events:none}
 .hero-eyebrow{font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:#2C4A3E;margin-bottom:1rem;font-weight:600}
 .hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.1;color:#1C1C1C;margin-bottom:1rem}
 .hero-tagline{font-size:1.15rem;color:#D4622D;font-weight:600;margin-bottom:0.75rem}
 .hero-sub{font-size:1rem;color:#555;max-width:520px;margin-bottom:2rem}
-.hero-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:0.08;pointer-events:none}
 .btn{display:inline-block;padding:0.8rem 2rem;background:#D4622D;color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none;cursor:pointer}
 .btn:hover{background:#B8501F;transform:translateY(-2px)}
-.btn-outline{background:transparent;border:2px solid #2C4A3E;color:#2C4A3E;margin-left:1rem}
+.btn-outline{background:transparent;border:2px solid #2C4A3E;color:#2C4A3E}
 .btn-outline:hover{background:#2C4A3E;color:#fff}
-
-/* About */
 #about{background:#fff}
 .section-label{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#2C4A3E;font-weight:600;margin-bottom:0.5rem}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#1C1C1C;margin-bottom:2rem;line-height:1.2}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .about-pill{display:inline-block;padding:0.4rem 1rem;background:#EEF3F0;color:#2C4A3E;border-radius:50px;font-size:0.82rem;font-weight:500;margin:0.25rem 0.25rem 0.25rem 0}
 .about-highlight{border-left:3px solid #D4622D;padding:1rem 1.2rem;background:#FDFAF6;border-radius:0 8px 8px 0;margin-bottom:1rem;font-size:0.95rem;color:#444}
-
-/* Process */
 #process{background:#FDFAF6}
 .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;margin-top:2rem}
 .process-step{text-align:center;padding:1.5rem 1rem;background:#fff;border-radius:12px;border:1px solid #E2D9CE;transition:all 0.3s}
@@ -47,8 +41,6 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
 .step-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#D4622D;font-weight:700;line-height:1}
 .step-icon{font-size:1.4rem;margin-bottom:0.4rem}
 .step-title{font-size:0.82rem;font-weight:600;color:#2C4A3E;margin-top:0.4rem}
-
-/* Case Studies */
 #work{background:#fff}
 .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
 .cs-card{background:#FDFAF6;border-radius:12px;border:1px solid #E2D9CE;overflow:hidden;transition:all 0.3s;cursor:pointer}
@@ -70,24 +62,27 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
 .cs-bold{font-weight:700;color:#1C1C1C}
 .cs-illus{text-align:center;padding:0.75rem 0 0.5rem;font-size:2rem}
 
-/* Impact */
+/* Impact - revised */
 #impact{background:#2C4A3E;color:#FDFAF6}
 #impact .section-label{color:#F2C94C}
 #impact .section-title{color:#FDFAF6}
-.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;margin-top:2rem}
-.impact-item{text-align:center;padding:1.5rem 1rem;border:1px solid rgba(242,201,76,0.25);border-radius:12px;transition:border-color 0.3s,background 0.3s}
+.impact-brand-group{margin-bottom:2.5rem}
+.impact-brand-name{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#F2C94C;font-weight:600;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(242,201,76,0.2)}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.impact-item{text-align:center;padding:1.25rem 1rem;border:1px solid rgba(242,201,76,0.2);border-radius:12px;transition:border-color 0.3s,background 0.3s}
 .impact-item:hover{border-color:#F2C94C;background:rgba(242,201,76,0.06)}
 .impact-num-wrap{display:flex;align-items:baseline;justify-content:center;gap:2px}
-.impact-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#F2C94C;line-height:1}
-.impact-suffix{font-family:'Playfair Display',serif;font-size:1.4rem;color:#F2C94C}
-.impact-label{font-size:0.8rem;color:rgba(253,250,246,0.65);margin-top:0.5rem;line-height:1.4}
+.impact-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#F2C94C;line-height:1}
+.impact-suffix{font-family:'Playfair Display',serif;font-size:1.3rem;color:#F2C94C}
+.impact-label{font-size:0.78rem;color:rgba(253,250,246,0.65);margin-top:0.4rem;line-height:1.4}
+.impact-fy{font-size:0.7rem;color:rgba(242,201,76,0.7);margin-top:0.2rem}
 
-/* Contact */
 #contact{background:#FDFAF6;text-align:center}
 #contact .section-label{color:#2C4A3E}
 #contact .section-title{margin-bottom:1rem}
 #contact p{color:#666;margin-bottom:2rem}
 .contact-illus{font-size:2.5rem;margin-bottom:1rem}
+.contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
 @media(max-width:640px){
   nav{padding:0.75rem 1rem}
@@ -96,7 +91,6 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
   .about-grid{grid-template-columns:1fr}
   section{padding:4rem 1.25rem}
   .hero-deco{display:none}
-  .btn-outline{margin-left:0;margin-top:0.75rem}
 }
 </style>
 </head>
@@ -113,7 +107,6 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
   </ul>
 </nav>
 
-<!-- Hero -->
 <section id="hero">
   <svg class="hero-deco" width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
     <circle cx="210" cy="210" r="180" fill="#2C4A3E"/>
@@ -132,12 +125,11 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
       <p class="hero-tagline">Driving Growth Across Consumer Categories</p>
       <p class="hero-sub">Brand marketer with 8+ years building relevant brands across FMCD, BFSI, and Travel ecosystems.</p>
       <a href="#work" class="btn">View My Work</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <a href="#contact" class="btn btn-outline" style="margin-left:1rem">Get in Touch</a>
     </div>
   </div>
 </section>
 
-<!-- About -->
 <section id="about">
   <div class="container fade-in">
     <p class="section-label">Who I Am</p>
@@ -151,31 +143,17 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
       <div>
         <p style="font-size:0.8rem;color:#888;margin-bottom:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Industries</p>
         <div>
-          <span class="about-pill">FMCD</span>
-          <span class="about-pill">BFSI</span>
-          <span class="about-pill">Travel</span>
-          <span class="about-pill">Healthcare</span>
-          <span class="about-pill">Eyewear</span>
-          <span class="about-pill">D2C</span>
+          <span class="about-pill">FMCD</span><span class="about-pill">BFSI</span><span class="about-pill">Travel</span><span class="about-pill">Healthcare</span><span class="about-pill">Eyewear</span><span class="about-pill">D2C</span>
         </div>
         <p style="font-size:0.8rem;color:#888;margin:1.1rem 0 0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Skills</p>
         <div>
-          <span class="about-pill">Brand Strategy</span>
-          <span class="about-pill">Social Media</span>
-          <span class="about-pill">Copywriting</span>
-          <span class="about-pill">Content Strategy</span>
-          <span class="about-pill">GTM Strategy</span>
-          <span class="about-pill">Campaign Management</span>
-          <span class="about-pill">Creator Communities</span>
-          <span class="about-pill">Lifecycle Marketing</span>
-          <span class="about-pill">App Growth</span>
+          <span class="about-pill">Brand Strategy</span><span class="about-pill">Social Media</span><span class="about-pill">Copywriting</span><span class="about-pill">Content Strategy</span><span class="about-pill">GTM Strategy</span><span class="about-pill">Campaign Management</span><span class="about-pill">Creator Communities</span><span class="about-pill">Lifecycle Marketing</span><span class="about-pill">App Growth</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Process -->
 <section id="process">
   <div class="container fade-in">
     <p class="section-label">How I Work</p>
@@ -190,7 +168,6 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
   </div>
 </section>
 
-<!-- Work -->
 <section id="work">
   <div class="container fade-in">
     <p class="section-label">Case Studies</p>
@@ -199,10 +176,7 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
 
       <div class="cs-card" onclick="toggleCard(this)">
         <div class="cs-header">
-          <div>
-            <p class="cs-brand">HDFC ERGO</p>
-            <h3 class="cs-title">GTM, App Launch & Growth</h3>
-          </div>
+          <div><p class="cs-brand">HDFC ERGO</p><h3 class="cs-title">GTM, App Launch & Growth</h3></div>
           <div class="cs-toggle">+</div>
         </div>
         <div class="cs-body"><div class="cs-inner">
@@ -212,18 +186,13 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
             <div class="metric-box"><div class="metric-num">4+</div><div class="metric-label">Rating on App Store & Play Store</div></div>
           </div>
           <p class="cs-detail"><span class="cs-bold">Core GTM member</span> for the HERE health ecosystem app — collaborated with McKinsey, set up CMS and content systems, and licensed expert-led healthcare content.<br><br>Drove app growth through targeted push notifications, lifecycle campaigns, and app download campaigns — resulting in <span class="cs-bold">30K+ average downloads per month</span> and a <span class="cs-bold">4+ rating on both App Store and Play Store</span>.</p>
-          <div style="margin-top:0.75rem">
-            <span class="cs-tag">GTM Strategy</span><span class="cs-tag">App Growth</span><span class="cs-tag">CleverTap</span><span class="cs-tag">McKinsey Collab</span>
-          </div>
+          <div style="margin-top:0.75rem"><span class="cs-tag">GTM Strategy</span><span class="cs-tag">App Growth</span><span class="cs-tag">CleverTap</span><span class="cs-tag">McKinsey Collab</span></div>
         </div></div>
       </div>
 
       <div class="cs-card" onclick="toggleCard(this)">
         <div class="cs-header">
-          <div>
-            <p class="cs-brand">HDFC ERGO</p>
-            <h3 class="cs-title">Brand Campaigns & Social Media</h3>
-          </div>
+          <div><p class="cs-brand">HDFC ERGO</p><h3 class="cs-title">Brand Campaigns & Social Media</h3></div>
           <div class="cs-toggle">+</div>
         </div>
         <div class="cs-body"><div class="cs-inner">
@@ -238,18 +207,13 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
           · <span class="cs-bold">Road Safety Campaign</span> — high-reach awareness drive<br>
           · <span class="cs-bold">Metro Station Branding</span> — OOH + digital integration<br>
           · <span class="cs-bold">AI-led Insurance Awareness</span> — innovative format campaign</p>
-          <div style="margin-top:0.75rem">
-            <span class="cs-tag">Social Media</span><span class="cs-tag">Celebrity Campaigns</span><span class="cs-tag">AI Content</span><span class="cs-tag">OOH Branding</span>
-          </div>
+          <div style="margin-top:0.75rem"><span class="cs-tag">Social Media</span><span class="cs-tag">Celebrity Campaigns</span><span class="cs-tag">AI Content</span><span class="cs-tag">OOH Branding</span></div>
         </div></div>
       </div>
 
       <div class="cs-card" onclick="toggleCard(this)">
         <div class="cs-header">
-          <div>
-            <p class="cs-brand">Pepperfry</p>
-            <h3 class="cs-title">Social Growth & Community Building</h3>
-          </div>
+          <div><p class="cs-brand">Pepperfry</p><h3 class="cs-title">Social Growth & Community Building</h3></div>
           <div class="cs-toggle">+</div>
         </div>
         <div class="cs-body"><div class="cs-inner">
@@ -258,40 +222,30 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
             <div class="metric-box"><div class="metric-num">321K</div><div class="metric-label">Instagram followers (from 191K)</div></div>
             <div class="metric-box"><div class="metric-num">1,100+</div><div class="metric-label">Creator community built</div></div>
           </div>
-          <p class="cs-detail">As Assistant Brand Manager, grew Instagram from 191K to 321K — <span class="cs-bold">largely organically</span>.<br><br><span class="cs-bold">Built a 1,100+ strong creator community from scratch</span> — identifying, onboarding and managing home décor creators to drive UGC and brand affinity at scale. This community became a key engine for organic reach and authentic storytelling.<br><br>Executed <span class="cs-bold">"Why Wait for Diwali"</span> campaign and managed a <span class="cs-bold">₹9Cr celebrity-led integrated campaign</span>.</p>
-          <div style="margin-top:0.75rem">
-            <span class="cs-tag">Community Building</span><span class="cs-tag">Creator Management</span><span class="cs-tag">Organic Growth</span><span class="cs-tag">Integrated Campaigns</span>
-          </div>
+          <p class="cs-detail">As Assistant Brand Manager, grew Instagram from 191K to 321K — <span class="cs-bold">largely organically</span>.<br><br><span class="cs-bold">Built a 1,100+ strong creator community from scratch</span> — identifying, onboarding and managing home décor creators to drive UGC and brand affinity at scale.<br><br>Executed <span class="cs-bold">"Why Wait for Diwali"</span> campaign and managed a <span class="cs-bold">₹9Cr celebrity-led integrated campaign</span>.</p>
+          <div style="margin-top:0.75rem"><span class="cs-tag">Community Building</span><span class="cs-tag">Creator Management</span><span class="cs-tag">Organic Growth</span><span class="cs-tag">Integrated Campaigns</span></div>
         </div></div>
       </div>
 
       <div class="cs-card" onclick="toggleCard(this)">
         <div class="cs-header">
-          <div>
-            <p class="cs-brand">Lenskart</p>
-            <h3 class="cs-title">Campaign & Social Growth</h3>
-          </div>
+          <div><p class="cs-brand">Lenskart</p><h3 class="cs-title">Campaign & Social Growth</h3></div>
           <div class="cs-toggle">+</div>
         </div>
         <div class="cs-body"><div class="cs-inner">
           <div class="cs-illus">👓</div>
           <div class="cs-metrics">
             <div class="metric-box"><div class="metric-num">60–70K</div><div class="metric-label">Follower growth in 1 year</div></div>
-            <div class="metric-box"><div class="metric-num">2.0</div><div class="metric-label">Nazar Hati, Durghatna Ghati — campaign edition</div></div>
+            <div class="metric-box"><div class="metric-num">2.0</div><div class="metric-label">Nazar Hati, Durghatna Ghati — edition</div></div>
           </div>
-          <p class="cs-detail">Led <span class="cs-bold">"Nazar Hati, Durghatna Ghati 2.0"</span> — a road safety campaign that drove brand awareness and meaningful social growth.<br><br>Grew social media following by <span class="cs-bold">60–70K in a span of 1 year</span> through campaign work and content strategy. Transitioned from content to a full marketing role.</p>
-          <div style="margin-top:0.75rem">
-            <span class="cs-tag">Nazar Hati Campaign</span><span class="cs-tag">Road Safety</span><span class="cs-tag">Social Growth</span>
-          </div>
+          <p class="cs-detail">Led <span class="cs-bold">"Nazar Hati, Durghatna Ghati 2.0"</span> — a road safety campaign that drove brand awareness and meaningful social growth.<br><br>Grew social media following by <span class="cs-bold">60–70K in a span of 1 year</span> through campaign work and content strategy.</p>
+          <div style="margin-top:0.75rem"><span class="cs-tag">Nazar Hati Campaign</span><span class="cs-tag">Road Safety</span><span class="cs-tag">Social Growth</span></div>
         </div></div>
       </div>
 
       <div class="cs-card" onclick="toggleCard(this)">
         <div class="cs-header">
-          <div>
-            <p class="cs-brand">Lonely Planet India</p>
-            <h3 class="cs-title">Organic Community Growth</h3>
-          </div>
+          <div><p class="cs-brand">Lonely Planet India</p><h3 class="cs-title">Organic Community Growth</h3></div>
           <div class="cs-toggle">+</div>
         </div>
         <div class="cs-body"><div class="cs-inner">
@@ -301,9 +255,7 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
             <div class="metric-box"><div class="metric-num">10x+</div><div class="metric-label">Organic growth</div></div>
           </div>
           <p class="cs-detail">Grew Lonely Planet India's social media from <span class="cs-bold">14K to 151K followers entirely organically</span> — through UGC-led community building and editorial content strategy.<br><br>Built a highly engaged travel community by combining user-generated content with curated editorial storytelling.</p>
-          <div style="margin-top:0.75rem">
-            <span class="cs-tag">Organic Growth</span><span class="cs-tag">UGC Strategy</span><span class="cs-tag">Community Building</span><span class="cs-tag">Editorial Content</span>
-          </div>
+          <div style="margin-top:0.75rem"><span class="cs-tag">Organic Growth</span><span class="cs-tag">UGC Strategy</span><span class="cs-tag">Community Building</span><span class="cs-tag">Editorial Content</span></div>
         </div></div>
       </div>
 
@@ -311,49 +263,83 @@ section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justi
   </div>
 </section>
 
-<!-- Impact -->
+<!-- Impact - redesigned with brand grouping -->
 <section id="impact">
   <div class="container fade-in">
     <p class="section-label">By the Numbers</p>
-    <h2 class="section-title">Impact at a Glance</h2>
-    <div class="impact-grid">
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="150">0</div><div class="impact-suffix">M</div></div>
-        <div class="impact-label">Views — HDFC ERGO campaigns (FY24–FY26)</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="120">0</div><div class="impact-suffix">M</div></div>
-        <div class="impact-label">Reach — HDFC ERGO campaigns (FY24–FY26)</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="2.5">0</div><div class="impact-suffix">M</div></div>
-        <div class="impact-label">Engagement (FY24–FY26)</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="151">0</div><div class="impact-suffix">K</div></div>
-        <div class="impact-label">Lonely Planet India followers (from 14K)</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="130">0</div><div class="impact-suffix">K+</div></div>
-        <div class="impact-label">Instagram growth at Pepperfry</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num-wrap"><div class="impact-num counter" data-target="1100">0</div><div class="impact-suffix">+</div></div>
-        <div class="impact-label">Creator community built at Pepperfry</div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">Impact at a Glance</h2>
+
+    <div class="impact-brand-group">
+      <div class="impact-brand-name">HDFC ERGO</div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="150">0</div><div class="impact-suffix">M</div></div>
+          <div class="impact-label">Views</div>
+          <div class="impact-fy">(FY24–FY26)</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="120">0</div><div class="impact-suffix">M</div></div>
+          <div class="impact-label">Reach</div>
+          <div class="impact-fy">(FY24–FY26)</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="2.5">0</div><div class="impact-suffix">M</div></div>
+          <div class="impact-label">Engagement</div>
+          <div class="impact-fy">(FY24–FY26)</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="30">0</div><div class="impact-suffix">K+</div></div>
+          <div class="impact-label">Avg. app downloads / month</div>
+          <div class="impact-fy">&nbsp;</div>
+        </div>
       </div>
     </div>
+
+    <div class="impact-brand-group">
+      <div class="impact-brand-name">Pepperfry</div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="130">0</div><div class="impact-suffix">K+</div></div>
+          <div class="impact-label">Instagram follower growth</div>
+          <div class="impact-fy">(191K → 321K)</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="1100">0</div><div class="impact-suffix">+</div></div>
+          <div class="impact-label">Creator community built</div>
+          <div class="impact-fy">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="impact-brand-group">
+      <div class="impact-brand-name">Lonely Planet India</div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="151">0</div><div class="impact-suffix">K</div></div>
+          <div class="impact-label">Followers grown</div>
+          <div class="impact-fy">(from 14K — entirely organic)</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num-wrap"><div class="impact-num counter" data-target="10">0</div><div class="impact-suffix">x+</div></div>
+          <div class="impact-label">Organic growth multiplier</div>
+          <div class="impact-fy">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact">
   <div class="container fade-in">
     <div class="contact-illus">👋</div>
     <p class="section-label">Get in Touch</p>
     <h2 class="section-title">Let's Build Something Together</h2>
     <p>Open to brand strategy, social media, and growth roles across consumer categories.</p>
-    <a href="mailto:aishwarya.menon245@gmail.com" class="btn">aishwarya.menon245@gmail.com</a>
-    <a href="https://www.linkedin.com/in/aishwarya-menon245" target="_blank" class="btn btn-outline" style="display:inline-block;margin-top:0.75rem">LinkedIn</a>
+    <div class="contact-btns">
+      <a href="mailto:aishwarya.menon245@gmail.com" class="btn">Email Me</a>
+      <a href="https://www.linkedin.com/in/aishwarya-menon-09546ba4/" target="_blank" class="btn btn-outline">LinkedIn</a>
+    </div>
   </div>
 </section>
 
