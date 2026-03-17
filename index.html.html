@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya Menon – Brand Strategy Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#FAF7F2;color:#1C1C1C;line-height:1.6}
+nav{position:fixed;top:0;width:100%;background:rgba(250,247,242,0.95);backdrop-filter:blur(8px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid #E8DDD0}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4622D;font-weight:700}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{text-decoration:none;color:#555;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#C4622D}
+section{padding:5rem 2rem;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.container{max-width:900px;width:100%}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Hero */
+#hero{background:linear-gradient(135deg,#FAF7F2 60%,#F5EDE0)}
+.hero-eyebrow{font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:#C4622D;margin-bottom:1rem;font-weight:500}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.1;color:#1C1C1C;margin-bottom:1rem}
+.hero-tagline{font-size:1.1rem;color:#C4622D;font-weight:600;margin-bottom:0.75rem}
+.hero-sub{font-size:1rem;color:#666;max-width:520px;margin-bottom:2rem}
+.btn{display:inline-block;padding:0.8rem 2rem;background:#C4622D;color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none;cursor:pointer}
+.btn:hover{background:#A84E24;transform:translateY(-2px)}
+.btn-outline{background:transparent;border:2px solid #C4622D;color:#C4622D;margin-left:1rem}
+.btn-outline:hover{background:#C4622D;color:#fff}
+
+/* About */
+#about{background:#fff}
+.section-label{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#C4622D;font-weight:600;margin-bottom:0.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#1C1C1C;margin-bottom:2rem;line-height:1.2}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-pill{display:inline-block;padding:0.4rem 1rem;background:#F5EDE0;color:#C4622D;border-radius:50px;font-size:0.85rem;font-weight:500;margin:0.3rem 0.3rem 0.3rem 0}
+.about-highlight{border-left:3px solid #C4622D;padding:1rem 1.2rem;background:#FAF7F2;border-radius:0 8px 8px 0;margin-bottom:1rem;font-size:0.95rem;color:#444}
+
+/* Process */
+#process{background:#FAF7F2}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;margin-top:2rem}
+.process-step{text-align:center;padding:1.5rem 1rem;background:#fff;border-radius:12px;border:1px solid #E8DDD0;transition:all 0.3s}
+.process-step:hover{border-color:#C4622D;transform:translateY(-4px)}
+.step-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#E8A87C;font-weight:700;line-height:1}
+.step-title{font-size:0.85rem;font-weight:600;color:#1C1C1C;margin-top:0.5rem}
+
+/* Case Studies */
+#work{background:#fff}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.cs-card{background:#FAF7F2;border-radius:12px;border:1px solid #E8DDD0;overflow:hidden;transition:all 0.3s;cursor:pointer}
+.cs-card:hover{border-color:#C4622D;transform:translateY(-3px)}
+.cs-header{padding:1.5rem;display:flex;justify-content:space-between;align-items:flex-start}
+.cs-brand{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#C4622D;font-weight:600;margin-bottom:0.3rem}
+.cs-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:#1C1C1C;line-height:1.3}
+.cs-toggle{width:28px;height:28px;border-radius:50%;background:#C4622D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.3s}
+.cs-card.open .cs-toggle{transform:rotate(45deg)}
+.cs-body{max-height:0;overflow:hidden;transition:max-height 0.5s ease,padding 0.3s}
+.cs-card.open .cs-body{max-height:600px}
+.cs-inner{padding:0 1.5rem 1.5rem}
+.cs-metrics{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem}
+.metric-box{background:#fff;border-radius:8px;padding:0.75rem;text-align:center;border:1px solid #E8DDD0}
+.metric-num{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4622D}
+.metric-label{font-size:0.72rem;color:#888;margin-top:0.2rem}
+.cs-detail{font-size:0.88rem;color:#555;line-height:1.7}
+.cs-tag{display:inline-block;padding:0.25rem 0.7rem;background:#F5EDE0;color:#C4622D;border-radius:50px;font-size:0.75rem;font-weight:500;margin:0.2rem 0.2rem 0 0}
+
+/* Impact */
+#impact{background:#1C1C1C;color:#FAF7F2}
+#impact .section-label{color:#E8A87C}
+#impact .section-title{color:#FAF7F2}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:2rem}
+.impact-item{text-align:center;padding:1.5rem;border:1px solid rgba(232,168,124,0.3);border-radius:12px}
+.impact-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#E8A87C;line-height:1}
+.impact-label{font-size:0.85rem;color:#aaa;margin-top:0.5rem}
+
+/* Contact */
+#contact{background:#FAF7F2;text-align:center}
+#contact .section-title{margin-bottom:1rem}
+#contact p{color:#666;margin-bottom:2rem;font-size:1rem}
+
+@media(max-width:640px){
+  nav{padding:1rem}
+  .nav-links{gap:0.75rem}
+  .nav-links a{font-size:0.75rem}
+  .about-grid{grid-template-columns:1fr}
+  .cs-metrics{grid-template-columns:1fr 1fr}
+  section{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AM</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="fade-in">
+      <p class="hero-eyebrow">Brand Strategy · Growth · Cultural Relevance</p>
+      <h1 class="hero-name">Aishwarya<br>Menon</h1>
+      <p class="hero-tagline">Driving Growth Across Consumer Categories</p>
+      <p class="hero-sub">Brand marketer with 8+ years building culturally relevant brands across insurance, retail, eyewear, and travel.</p>
+      <a href="#work" class="btn">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container fade-in">
+    <p class="section-label">Who I Am</p>
+    <h2 class="section-title">Brand Marketer.<br>Cultural Strategist.</h2>
+    <div class="about-grid">
+      <div>
+        <div class="about-highlight">8+ years across insurance, retail, eyewear, and travel — always focused on business impact.</div>
+        <div class="about-highlight">Experience across 0→1 launches, brand campaigns, and community-led growth.</div>
+        <div class="about-highlight">Focus: cultural relevance, scalable execution, real results.</div>
+      </div>
+      <div>
+        <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Industries</p>
+        <div>
+          <span class="about-pill">Insurance</span>
+          <span class="about-pill">Retail</span>
+          <span class="about-pill">Eyewear</span>
+          <span class="about-pill">Travel</span>
+          <span class="about-pill">Healthcare</span>
+          <span class="about-pill">D2C</span>
+        </div>
+        <p style="font-size:0.85rem;color:#888;margin:1.25rem 0 0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">Skills</p>
+        <div>
+          <span class="about-pill">GTM Strategy</span>
+          <span class="about-pill">Social Growth</span>
+          <span class="about-pill">Campaign Management</span>
+          <span class="about-pill">Creator Communities</span>
+          <span class="about-pill">Lifecycle Marketing</span>
+          <span class="about-pill">Brand Campaigns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container fade-in">
+    <p class="section-label">How I Work</p>
+    <h2 class="section-title">Strategy → Execution → Impact</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Business Problem</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Consumer & Cultural Tension</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Strategic Narrative</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Scalable Execution</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-title">Measure Real Impact</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container fade-in">
+    <p class="section-label">Case Studies</p>
+    <h2 class="section-title">Work That Moved the Needle</h2>
+    <div class="cs-grid">
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">HDFC ERGO</p>
+            <h3 class="cs-title">GTM & App Launch</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">HERE</div><div class="metric-label">App Launched</div></div>
+              <div class="metric-box"><div class="metric-num">McKinsey</div><div class="metric-label">Collaborated With</div></div>
+            </div>
+            <p class="cs-detail">Core GTM member for the HERE health ecosystem app. Set up CMS and content systems, collaborated with McKinsey, and licensed expert-led healthcare content to create a differentiated health platform.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">GTM Strategy</span>
+              <span class="cs-tag">App Launch</span>
+              <span class="cs-tag">Content Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">HDFC ERGO</p>
+            <h3 class="cs-title">App Growth & Lifecycle</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">MAU/DAU</div><div class="metric-label">Tracked & Owned</div></div>
+              <div class="metric-box"><div class="metric-num">30K+</div><div class="metric-label">Follower Growth / Month</div></div>
+            </div>
+            <p class="cs-detail">Owned app growth end-to-end — MAU/DAU tracking, push notifications, and lifecycle campaigns via CleverTap. Drove significant usage spikes and 30K follower growth in a single month.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">CleverTap</span>
+              <span class="cs-tag">Lifecycle Marketing</span>
+              <span class="cs-tag">Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">HDFC ERGO</p>
+            <h3 class="cs-title">Campaigns & Cultural Relevance</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">28M</div><div class="metric-label">Views – Seema Taparia</div></div>
+              <div class="metric-box"><div class="metric-num">6–7M</div><div class="metric-label">Views – Road Safety</div></div>
+            </div>
+            <p class="cs-detail">Led campaigns that made insurance culturally relevant. Seema Taparia collab drove 28M views. Road safety campaign reached 6–7M. AI-led insurance awareness, metro branding, and a claims campaign at 4M+ views.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">Celebrity Campaigns</span>
+              <span class="cs-tag">AI-led Content</span>
+              <span class="cs-tag">OOH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">Pepperfry</p>
+            <h3 class="cs-title">Social Growth & Brand Campaigns</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">321K</div><div class="metric-label">Instagram (from 191K)</div></div>
+              <div class="metric-box"><div class="metric-num">₹9Cr</div><div class="metric-label">Campaign Managed</div></div>
+            </div>
+            <p class="cs-detail">As Assistant Brand Manager, grew Instagram from 191K to 321K largely organically. Executed "Why Wait for Diwali" campaign, managed a ₹9Cr celebrity-led integrated campaign, and built a 1,100+ creator community.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">Social Growth</span>
+              <span class="cs-tag">Creator Community</span>
+              <span class="cs-tag">Integrated Campaigns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">Lenskart</p>
+            <h3 class="cs-title">Content to Marketing</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">+70K</div><div class="metric-label">Follower Growth</div></div>
+              <div class="metric-box"><div class="metric-num">Content</div><div class="metric-label">→ Marketing Transition</div></div>
+            </div>
+            <p class="cs-detail">Transitioned from content to full marketing role. Led campaign work and drove 50–70K follower growth across platforms.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">Campaign Work</span>
+              <span class="cs-tag">Content Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card" onclick="toggleCard(this)">
+        <div class="cs-header">
+          <div>
+            <p class="cs-brand">Lonely Planet</p>
+            <h3 class="cs-title">Organic Community Growth</h3>
+          </div>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-inner">
+            <div class="cs-metrics">
+              <div class="metric-box"><div class="metric-num">151K</div><div class="metric-label">Followers (from 14K)</div></div>
+              <div class="metric-box"><div class="metric-num">UGC</div><div class="metric-label">Community-Led Growth</div></div>
+            </div>
+            <p class="cs-detail">Grew Lonely Planet India from 14K to 151K followers organically through UGC-led community building and editorial content strategy.</p>
+            <div style="margin-top:0.75rem">
+              <span class="cs-tag">Organic Growth</span>
+              <span class="cs-tag">UGC Strategy</span>
+              <span class="cs-tag">Editorial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="container fade-in">
+    <p class="section-label">By the Numbers</p>
+    <h2 class="section-title">Impact at a Glance</h2>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-num counter" data-target="28">0</div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#E8A87C">M</div>
+        <div class="impact-label">Peak campaign views</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num counter" data-target="151">0</div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#E8A87C">K</div>
+        <div class="impact-label">Lonely Planet followers</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num counter" data-target="130">0</div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#E8A87C">K+</div>
+        <div class="impact-label">Instagram growth (Pepperfry)</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num counter" data-target="8">0</div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#E8A87C">+</div>
+        <div class="impact-label">Years of experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container fade-in">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's Build Something Together</h2>
+    <p>Open to brand strategy, growth, and campaign roles across consumer categories.</p>
+    <a href="mailto:aishwarya@email.com" class="btn">Send a Message</a>
+    <a href="https://linkedin.com" class="btn btn-outline" style="margin-left:1rem">LinkedIn</a>
+  </div>
+</section>
+
+<script>
+function toggleCard(card){card.classList.toggle('open')}
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.querySelectorAll('.counter').length){
+        e.target.querySelectorAll('.counter').forEach(c=>{
+          const target=+c.getAttribute('data-target');
+          let cur=0;const inc=target/40;
+          const timer=setInterval(()=>{
+            cur+=inc;if(cur>=target){cur=target;clearInterval(timer)}
+            c.textContent=Math.round(cur);
+          },40);
+        });
+      }
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
